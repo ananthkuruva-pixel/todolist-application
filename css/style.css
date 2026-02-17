@@ -10,36 +10,94 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
+/* ===== Main Card ===== */
 .container {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  width: 350px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 14px;
+  width: 360px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
   text-align: center;
 }
 
+/* ===== Inputs ===== */
 input {
   width: 100%;
-  padding: 8px;
-  margin-top: 10px;
+  padding: 10px;
+  margin-top: 12px;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.2s ease;
 }
 
+input:focus {
+  border-color: #007bff;
+}
+
+/* ===== Buttons ===== */
 button {
-  margin-top: 10px;
-  padding: 8px 12px;
+  margin-top: 12px;
+  padding: 10px 14px;
   border: none;
   background: #007bff;
-  color: white;
-  border-radius: 6px;
+  color: #ffffff;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
 }
 
 button:hover {
   background: #0056b3;
+  transform: translateY(-1px);
+}
+
+/* ===== Task Section ===== */
+.input-section {
+  display: flex;
+  gap: 8px;
+}
+
+ul {
+  list-style: none;
+  margin-top: 16px;
+  text-align: left;
+}
+
+/* ===== Each Task ===== */
+li {
+  background: #f8f9fa;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Completed task */
+.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Left side of task */
+.task-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Delete button */
+.delete-btn {
+  background: #dc3545;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.delete-btn:hover {
+  background: #a71d2a;
 }
