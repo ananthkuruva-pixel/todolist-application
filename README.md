@@ -31,19 +31,20 @@ This project demonstrates front-end development fundamentals, authentication usi
 
 todolist-application/
 │
-├── index.html # Main To-Do dashboard
-├── login.html # Login page
-├── signup.html # Signup page
-├── test.html # Navigation & verification page
-├── README.md # Project documentation
-├── LICENSE # MIT License
+├── index.html          ← To-Do dashboard (protected after login)
+├── login.html          ← Login page
+├── signup.html         ← Signup page
+├── test.html           ← Optional navigation/test page
+├── README.md           ← Project documentation
+├── LICENSE             ← MIT License
 │
 ├── css/
-│ └── style.css # Application styling
+│   └── style.css       ← All styling
 │
 └── js/
-├── authorization.js # Signup, login, logout, protection
-└── script.js # To-Do task logic
+    ├── authorization.js ← Signup, login, logout, page protection
+    └── script.js        ← To-Do task functionality
+
 
 
 ---
