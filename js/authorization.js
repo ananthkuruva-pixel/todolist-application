@@ -1,8 +1,8 @@
 // ===== SIGNUP =====
 function signupUser() {
-  const email = document.getElementById("signupEmail").value.trim();
-  const phone = document.getElementById("signupPhone").value.trim();
-  const password = document.getElementById("signupPassword").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const password = document.getElementById("password").value.trim();
 
   if (!email || !phone || !password) {
     alert("Please fill all fields");
@@ -13,18 +13,14 @@ function signupUser() {
   localStorage.setItem("user", JSON.stringify(user));
 
   alert("Signup successful! Redirecting to login...");
-
-  window.location.href = "login.html";   // 🔴 THIS does redirect
+  window.location.href = "login.html";
 }
 
 
-
-
 // ===== LOGIN =====
-function loginUser() {
-  const email = document.getElementById("loginEmail").value.trim();
-  const phone = document.getElementById("loginPhone").value.trim();
-  const password = document.getElementById("loginPassword").value.trim();
+function login() {
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
 
   const savedUser = JSON.parse(localStorage.getItem("user"));
 
@@ -34,11 +30,7 @@ function loginUser() {
     return;
   }
 
-  if (
-    email === savedUser.email &&
-    phone === savedUser.phone &&
-    password === savedUser.password
-  ) {
+  if (email === savedUser.email && password === savedUser.password) {
     localStorage.setItem("loggedIn", "true");
     window.location.href = "index.html";
   } else {
@@ -47,15 +39,12 @@ function loginUser() {
 }
 
 
-
 // ===== PAGE PROTECTION =====
 if (window.location.pathname.includes("index.html")) {
   if (localStorage.getItem("loggedIn") !== "true") {
     window.location.href = "login.html";
   }
 }
-
-
 
 
 // ===== LOGOUT =====
