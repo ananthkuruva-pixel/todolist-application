@@ -4,10 +4,12 @@ const taskList = document.getElementById("taskList");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
+// ===== Save tasks to localStorage =====
 function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
+// ===== Render tasks on screen =====
 function renderTasks() {
   taskList.innerHTML = "";
 
@@ -35,7 +37,7 @@ function renderTasks() {
     leftDiv.appendChild(checkbox);
     leftDiv.appendChild(span);
 
-    // Delete button
+    // ===== Delete button =====
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
     deleteBtn.classList.add("delete-btn");
@@ -52,9 +54,13 @@ function renderTasks() {
   });
 }
 
+// ===== Add new task =====
 addBtn.addEventListener("click", () => {
   const text = taskInput.value.trim();
-  if (!text) return;
+  if (!text) {
+    alert("Please enter a task");
+    return;
+  }
 
   tasks.push({ text, completed: false });
   taskInput.value = "";
@@ -62,4 +68,10 @@ addBtn.addEventListener("click", () => {
   renderTasks();
 });
 
+// ===== Allow Enter key to add task =====
+taskInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") addBtn.click();
+});
+
+// ===== Initial render =====
 renderTasks();
