@@ -12,7 +12,7 @@ function signupUser() {
   const user = { email, phone, password };
   localStorage.setItem("user", JSON.stringify(user));
 
-  alert("Signup successful! Redirecting to login...");
+  alert("Signup successful! Please login.");
   window.location.href = "login.html";
 }
 
@@ -34,7 +34,7 @@ function login() {
     localStorage.setItem("loggedIn", "true");
     window.location.href = "index.html";
   } else {
-    alert("Invalid login details");
+    alert("Invalid email or password");
   }
 }
 
